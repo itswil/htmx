@@ -11,7 +11,7 @@ export const Base = ({ children }: Html.PropsWithChildren) => (
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Bun, Elysia, HTMX</title>
       </head>
-      <body>${children}</body>
+      <body>{children}</body>
     </html>
   </>
 );
