@@ -1,4 +1,6 @@
-# Elysia, Bun, HTMX
+# Trying out HTMX
+
+> HTMX served from a TypeScript backend using Elysia JS and Bun
 
 ## Setup
 
