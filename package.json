@@ -8,12 +8,13 @@
   "dependencies": {
     "@elysiajs/html": "latest",
     "@elysiajs/static": "^0.7.1",
+    "@kitajs/html": "^3.0.4",
+    "@kitajs/ts-html-plugin": "^1.3.0",
     "elysia": "latest"
   },
   "devDependencies": {
     "bun-types": "latest",
-    "tailwindcss": "latest",
-    "typed-html": "latest"
+    "tailwindcss": "latest"
   },
   "module": "src/index.js"
 }
