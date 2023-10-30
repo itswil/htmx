@@ -7,8 +7,7 @@ export const actionsController = (app: Elysia) =>
   app
     .use(html())
     .post("/click", () => "lol")
-    .get("/characters/page", async (req) => {
-      const { html, query } = req;
+    .get("/characters/page", async ({ html, query }) => {
       const response = await fetch(
         `https://rickandmortyapi.com/api/character?page=${query.page}`
       );

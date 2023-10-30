@@ -17,8 +17,7 @@ export const pagesController = (app: Elysia) =>
       const data: CharactersListResponse = await response.json();
       return html(<Characters data={data} />);
     })
-    .get("/character/:id", async (req) => {
-      const { html, params } = req;
+    .get("/character/:id", async ({ html, params }) => {
       const response = await fetch(
         `https://rickandmortyapi.com/api/character/${params.id}`
       );
