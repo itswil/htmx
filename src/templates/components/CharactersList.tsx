@@ -18,7 +18,7 @@ export const CharactersList = ({ data }: CharactersParams) => {
         ))}
         {info.prev && (
           <button
-            hx-get={`/characters/get-page?page=${info.prev.at(-1)}`}
+            hx-get={`/characters/page?page=${info.prev.at(-1)}`}
             hx-target="#results"
           >
             Previous
