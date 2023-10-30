@@ -1,4 +1,5 @@
 import type { CharactersListResponse } from "../../types/ListResponse";
+import { CharactersList } from "../components/CharactersList";
 import { Main } from "../layouts/Main";
 
 type CharactersParams = {
@@ -6,17 +7,11 @@ type CharactersParams = {
 };
 
 export const Characters = ({ data }: CharactersParams) => {
-  const { results } = data;
   return (
     <Main>
       <h1>Characters</h1>
-      {results.map((r) => (
-        <div>
-          <a hx-boost="true" href={`/character/${r.id}`}>
-            {r.name}
-          </a>
-        </div>
-      ))}
+      <p>This is a list of characters from Rick and Morty</p>
+      <CharactersList data={data} />
     </Main>
   );
 };
