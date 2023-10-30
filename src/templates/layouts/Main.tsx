@@ -8,7 +8,7 @@ export const Main = ({ children }: Html.PropsWithChildren) => {
         <span>LOGO</span>
         <nav hx-boost="true">
           <a href="/">Home</a>
-          <a href="/about">About</a>
+          <a href="/characters">Characters</a>
         </nav>
       </header>
       <main>{children}</main>

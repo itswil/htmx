@@ -14,6 +14,10 @@ app
   .use(actionsController)
   .use(pagesController)
 
+  .onError(({ code, error }) => {
+    return new Response(error.toString());
+  })
+
   .listen(3000);
 
 console.log(
