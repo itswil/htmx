@@ -1,7 +1,7 @@
 import type Elysia from "elysia";
 import { html } from "@elysiajs/html";
-import { CharactersListResponse } from "../types/ListResponse";
 import { CharactersList } from "../templates/components/CharactersList";
+import type { CharactersListResponse } from "../types/ListResponse";
 
 export const actionsController = (app: Elysia) =>
   app

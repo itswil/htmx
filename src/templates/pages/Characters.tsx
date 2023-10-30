@@ -1,6 +1,6 @@
-import type { CharactersListResponse } from "../../types/ListResponse";
 import { CharactersList } from "../components/CharactersList";
 import { Main } from "../layouts/Main";
+import type { CharactersListResponse } from "../../types/ListResponse";
 
 type CharactersParams = {
   data: CharactersListResponse;

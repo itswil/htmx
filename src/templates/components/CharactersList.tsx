@@ -1,4 +1,4 @@
-import { CharactersListResponse } from "../../types/ListResponse";
+import type { CharactersListResponse } from "../../types/ListResponse";
 
 type CharactersParams = {
   data: CharactersListResponse;
