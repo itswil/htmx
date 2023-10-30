@@ -6,6 +6,19 @@ type CharactersParams = {
 
 export const CharactersList = ({ data }: CharactersParams) => {
   const { info, results } = data;
+  let prevPage = "";
+  let nextPage = "";
+
+  if (info.prev) {
+    const { searchParams } = new URL(info.prev);
+    prevPage = searchParams.get("page") || "";
+  }
+
+  if (info.next) {
+    const { searchParams } = new URL(info.next);
+    nextPage = searchParams.get("page") || "";
+  }
+
   return (
     <>
       <div id="results">
@@ -18,7 +31,7 @@ export const CharactersList = ({ data }: CharactersParams) => {
         ))}
         {info.prev && (
           <button
-            hx-get={`/characters/page?page=${info.prev.at(-1)}`}
+            hx-get={`/characters/page?page=${prevPage}`}
             hx-target="#results"
           >
             Previous
@@ -26,7 +39,7 @@ export const CharactersList = ({ data }: CharactersParams) => {
         )}
         {info.next && (
           <button
-            hx-get={`/characters/page?page=${info.next.at(-1)}`}
+            hx-get={`/characters/page?page=${nextPage}`}
             hx-target="#results"
           >
             Next

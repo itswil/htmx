@@ -6,8 +6,8 @@ export const createListResponseSchema = <T extends z.ZodTypeAny>(schema: T) =>
     info: z.object({
       count: z.number(),
       pages: z.number(),
-      next: z.string().nullable(),
-      prev: z.string().nullable(),
+      next: z.string().url().nullable(),
+      prev: z.string().url().nullable(),
     }),
     results: z.array(schema),
   });
