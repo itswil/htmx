@@ -6,6 +6,7 @@
     "dev": "bun run --watch src/index.tsx"
   },
   "dependencies": {
+    "@elysiajs/cookie": "^0.7.0",
     "@elysiajs/html": "latest",
     "@elysiajs/static": "^0.7.1",
     "@grotto/logysia": "^0.0.5",

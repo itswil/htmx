@@ -1,4 +1,5 @@
 import { Elysia } from "elysia";
+import { html } from "@elysiajs/html";
 import { staticPlugin } from "@elysiajs/static";
 import { logger } from "@grotto/logysia";
 
@@ -8,6 +9,7 @@ import { pagesController } from "./controllers/pages";
 export const app = new Elysia();
 
 app
+  .use(html())
   .use(logger())
   .use(staticPlugin())
 
