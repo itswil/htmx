@@ -3,11 +3,16 @@ import { CharactersList } from "../templates/components/CharactersList";
 
 import type Elysia from "elysia";
 import type { CharactersListResponse } from "../types/ListResponse";
+import { userExists } from "../db/auth";
 
 export const actionsController = (app: Elysia) =>
   app
     .use(cookie())
-    .post("/login", ({ set, setCookie }) => {
+    .post("/login", ({ body, set, setCookie }) => {
+      if (!userExists(body.username)) {
+        return <p>User does not exist or credentials are incorrect</p>;
+      }
+
       setCookie("sessionId", "abc123", { httpOnly: true });
       return (set.headers["HX-Redirect"] = "/");
     })
