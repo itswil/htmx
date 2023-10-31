@@ -1,8 +1,12 @@
 import { Main } from "../layouts/Main";
 
-export const Home = () => {
+type HomeProps = {
+  isLoggedIn: boolean;
+};
+
+export const Home = ({ isLoggedIn }: HomeProps) => {
   return (
-    <Main>
+    <Main isLoggedIn={isLoggedIn}>
       <h1>Home</h1>
     </Main>
   );

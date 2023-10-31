@@ -1,8 +1,12 @@
 import { Main } from "../layouts/Main";
 
-export const Protected = () => {
+type ProtectedParams = {
+  isLoggedIn: boolean;
+};
+
+export const Protected = ({ isLoggedIn }: ProtectedParams) => {
   return (
-    <Main>
+    <Main isLoggedIn={isLoggedIn}>
       <h1>Protected</h1>
       <p>SUPER SECRET CONTENT</p>
     </Main>

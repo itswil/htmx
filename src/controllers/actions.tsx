@@ -7,13 +7,13 @@ import type { CharactersListResponse } from "../types/ListResponse";
 export const actionsController = (app: Elysia) =>
   app
     .use(cookie())
-    .post("/setCookie", ({ setCookie }) => {
+    .post("/login", ({ set, setCookie }) => {
       setCookie("sessionId", "abc123", { httpOnly: true });
-      return "Cookie has been set";
+      return (set.headers["HX-Redirect"] = "/");
     })
-    .post("/deleteCookie", ({ removeCookie }) => {
+    .post("/logout", ({ removeCookie, set }) => {
       removeCookie("sessionId");
-      return "Cookie has been removed";
+      return (set.headers["HX-Redirect"] = "/");
     })
     .get("/characters/page", async ({ query }) => {
       const response = await fetch(
