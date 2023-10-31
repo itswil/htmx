@@ -16,11 +16,7 @@ export const Main = ({ children, isLoggedIn }: MainProps) => (
         <a href="/protected">Protected</a>
         {!isLoggedIn && <a href="/login">Log In</a>}
       </nav>
-      {isLoggedIn && (
-        <a hx-post="/logout" hx-swap="none">
-          Log Out
-        </a>
-      )}
+      {isLoggedIn && <a hx-post="/logout">Log Out</a>}
     </header>
     <main>{children}</main>
   </Base>
