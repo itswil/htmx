@@ -4,12 +4,24 @@ import { CharactersList } from "../templates/components/CharactersList";
 import type Elysia from "elysia";
 import type { CharactersListResponse } from "../types/ListResponse";
 import { userExists } from "../db/auth";
+import { z } from "zod";
+
+const loginFormSchema = z.object({
+  username: z.string().min(1),
+  password: z.string().min(1),
+});
 
 export const actionsController = (app: Elysia) =>
   app
     .use(cookie())
     .post("/login", ({ body, set, setCookie }) => {
-      if (!userExists(body.username)) {
+      const validatedForm = loginFormSchema.safeParse(body);
+
+      if (!validatedForm.success) {
+        return <p>Sorry, there was an error</p>;
+      }
+
+      if (!userExists(validatedForm.data.username)) {
         return <p>User does not exist or credentials are incorrect</p>;
       }
 
