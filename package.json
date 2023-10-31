@@ -6,10 +6,10 @@
     "dev": "bun run --watch src/index.tsx"
   },
   "dependencies": {
+    "@bogeychan/elysia-logger": "^0.0.12",
     "@elysiajs/cookie": "^0.7.0",
     "@elysiajs/html": "latest",
     "@elysiajs/static": "^0.7.1",
-    "@grotto/logysia": "^0.0.5",
     "@kitajs/html": "^3.0.4",
     "@kitajs/ts-html-plugin": "^1.3.0",
     "elysia": "latest",

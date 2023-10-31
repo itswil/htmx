@@ -1,7 +1,7 @@
 import { Elysia } from "elysia";
 import { html } from "@elysiajs/html";
 import { staticPlugin } from "@elysiajs/static";
-import { logger } from "@grotto/logysia";
+import { logger } from "@bogeychan/elysia-logger";
 
 import { actionsController } from "./controllers/actions";
 import { pagesController } from "./controllers/pages";
